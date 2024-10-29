@@ -56,25 +56,25 @@ export const App = () => {
         </button>
 
         <button
-          onClick={() =>
-            reverse !== true ? setReverse(true) : setReverse(false)
+          onClick={() => setReverse(!reverse)
           }
           type="button"
           className={`button is-warning ${reverse !== true ? 'is-light' : ''}`}
         >
           Reverse
         </button>
-        { (sortField !== '' || reverse !== false) && (
-        <button
-          onClick={() => {
-            setSortField('');
-            setReverse(false);
-          }}
-          type="button"
-          className="button is-danger is-light"
-        >
-          Reset
-        </button>)}
+        {(sortField !== '' || reverse !== false) && (
+          <button
+            onClick={() => {
+              setSortField('');
+              setReverse(false);
+            }}
+            type="button"
+            className="button is-danger is-light"
+          >
+            Reset
+          </button>
+        )}
       </div>
 
       <ul>
